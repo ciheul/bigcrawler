@@ -6,8 +6,10 @@
 from scrapy.item import Item, Field
 
 
-class NewsWeb(Item):
+class NewsItem(Item):
     visit_id = Field()
     visit_status = Field()
-    title = Field()
     url = Field()
+    html = Field()
+    content = Field()
+    #title = Field()

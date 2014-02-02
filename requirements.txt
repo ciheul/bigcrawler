@@ -1,0 +1,8 @@
+scrapy==0.22.0
+ipython==1.1.0
+yolk==0.4.3
+pymongo==2.6.3
+redis==2.9.1
+readability-lxml==0.3.0.2
+boilerpipe==1.2.0.0
+scrapy-mongodb==0.6.2

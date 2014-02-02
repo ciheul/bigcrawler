@@ -1,13 +1,13 @@
 from scrapy import log
 from scrapy.http import Request
-from scrapy.spider import BaseSpider
+from scrapy.spider import Spider
 from scrapy.selector import HtmlXPathSelector
 from scrapy.utils.request import request_fingerprint
-from bigcrawler.items import NewsWeb
+from bigcrawler.items import NewsItem
 from bigcrawler.middlewares.ignore import IgnoreVisitedItems
 
 
-class DetikSpider(BaseSpider):
+class DetikSpider(Spider):
     """Crawl detik.com"""
     name = 'detik'
     allowed_domains = ['detik.com']
@@ -15,9 +15,10 @@ class DetikSpider(BaseSpider):
 
     def parse(self, response):
         hxs = HtmlXPathSelector(response)
+        response_news = NewsItem()
 
-        response_news = NewsWeb()
         response_news['url'] = response.url
+
         title = hxs.select('//h1/text()').extract()
         if title != []:
             response_news['title'] = title.pop().strip()

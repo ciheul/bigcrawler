@@ -7,7 +7,7 @@ from scrapy.http import Request
 from scrapy.item import BaseItem
 from scrapy.utils.request import request_fingerprint
 
-from bigcrawler.items import NewsWeb
+from bigcrawler.items import NewsItem
 
 
 class IgnoreVisitedItems(object):
@@ -37,7 +37,7 @@ class IgnoreVisitedItems(object):
                         log.msg("Ignoring already visited: %s" % x.url,
                                 level=log.INFO, spider=spider)
                         visited = True
-            # BaseItem/NewsWeb goes here
+            # BaseItem/NewsItem goes here
             elif isinstance(x, BaseItem):
                 #log.msg("It is a BaseItem")
                 visit_id = self._visited_id(response.request)
@@ -46,9 +46,9 @@ class IgnoreVisitedItems(object):
                     x['visit_id'] = visit_id
                     x['visit_status'] = 'new'
             if visited:
-                # Request's url has been visited. It converts to NewsWeb.
+                # Request's url has been visited. It converts to NewsItem.
                 # This isn't important and should be commented.
-                ret.append(NewsWeb(visit_id=visit_id, visit_status='old'))
+                ret.append(NewsItem(visit_id=visit_id, visit_status='old'))
             else:
                 ret.append(x)
         return ret

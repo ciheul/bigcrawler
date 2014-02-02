@@ -1,2 +1,5 @@
+analyst/
+json/
+log/
 *.pyc
-*.json
+test_readability.py
