@@ -6,3 +6,4 @@ redis==2.9.1
 readability-lxml==0.3.0.2
 boilerpipe==1.2.0.0
 scrapy-mongodb==0.6.2
+Fabric==1.8.1

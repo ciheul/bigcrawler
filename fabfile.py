@@ -21,7 +21,7 @@ def setup():
     sudo("apt-get install libxml2-dev")
     sudo("apt-get install libxslt1-dev")
     sudo("apt-get install python-dev")
-    sudo("touch /data/db")
+    #sudo("touch /data/db")
     sudo("apt-get install mongodb-server")
     sudo("pip install virtualenv")
 

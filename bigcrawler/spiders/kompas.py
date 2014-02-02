@@ -5,7 +5,7 @@ from scrapy.http import Request
 from scrapy.selector import Selector
 from scrapy.selector import HtmlXPathSelector
 from bigcrawler.items import NewsItem
-from bigcrawler.middlewares.ignore import IgnoreVisitedItems
+from bigcrawler.middlewares.spider.ignore import IgnoreVisitedItems
 #from readability.readability import Document
 from boilerpipe.extract import Extractor
 import zlib

@@ -4,7 +4,7 @@ from scrapy.spider import Spider
 from scrapy.selector import HtmlXPathSelector
 from scrapy.utils.request import request_fingerprint
 from bigcrawler.items import NewsItem
-from bigcrawler.middlewares.ignore import IgnoreVisitedItems
+from bigcrawler.middlewares.spider.ignore import IgnoreVisitedItems
 
 
 class DetikSpider(Spider):
